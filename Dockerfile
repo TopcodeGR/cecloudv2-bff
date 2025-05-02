@@ -22,6 +22,7 @@ ENV REPOSILITE_PASSWORD=${REPOSILITE_PASSWORD}
 COPY src src
 
 # If tests pass, proceed with packaging
+RUN chmod +x ./mvnw
 RUN ./mvnw clean package
 
 # ---- Stage 2: Create the final image ----
