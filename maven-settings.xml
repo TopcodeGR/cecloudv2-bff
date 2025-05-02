@@ -1,0 +1,10 @@
+<settings>
+    <servers>
+        <server>
+            <!-- Id has to match the id provided in pom.xml -->
+            <id>reposilite-repository-private</id>
+            <username>${REPOSILITE_USERNAME}</username>
+            <password>${REPOSILITE_PASSWORD}</password>
+        </server>
+    </servers>
+</settings>
