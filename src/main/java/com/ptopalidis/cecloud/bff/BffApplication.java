@@ -1,14 +1,23 @@
 package com.ptopalidis.cecloud.bff;
 
-import com.ptopalidis.cecloud.bff.properties.OidcClientProperties;
-import com.ptopalidis.cecloud.bff.properties.OidcProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableConfigurationProperties({OidcProperties.class, OidcClientProperties.class})
+@ComponentScan(basePackages = {
+		"com.topcode.gateway",
+})
+@EnableJpaRepositories(basePackages = {
+		"com.topcode.gateway",
+})
+@EntityScan(basePackages = {
+		"com.topcode.gateway",
+})
 public class BffApplication {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(BffApplication.class, args);
