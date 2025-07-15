@@ -23,6 +23,7 @@ COPY src src
 
 # If tests pass, proceed with packaging
 RUN chmod +x ./mvnw
+RUN sed -i 's/\r$//' mvnw
 RUN ./mvnw clean package
 
 # ---- Stage 2: Create the final image ----
